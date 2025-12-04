@@ -29,13 +29,6 @@ project {
 
     buildType(Build)
     buildType(HttpsGithubComZisGitExampleTeamcityGit)
-
-    // Триггер на VCS: запускать сборку при изменениях во всех ветках
-    triggers {
-        vcs {
-            branchFilter = "+:*"
-        }
-    }
 }
 
 object Build : BuildType({
@@ -65,6 +58,13 @@ object Build : BuildType({
             }
             goals = "clean deploy"
             userSettingsSelection = "settings.xml"
+        }
+    }
+
+    // Триггер на VCS: запускать сборку при изменениях во всех ветках
+    triggers {
+        vcs {
+            branchFilter = "+:*"
         }
     }
 })
