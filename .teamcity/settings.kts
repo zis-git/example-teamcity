@@ -64,7 +64,7 @@ object Build : BuildType({
 
     // Триггер на VCS: запускать сборку при изменениях во всех ветках
     triggers {
-        vcs {
+        jetbrains.buildServer.configs.kotlin.triggers.vcs {
             branchFilter = "+:*"
         }
     }
